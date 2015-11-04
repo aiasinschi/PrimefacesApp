@@ -7,18 +7,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </h:head>
 
-<h:body>
-    <p:outputPanel layout="center">
-        <p:graphicImage value="/images/logo.png"/> <br/>
-        <h:outputText value="Estat" /> <br/>
-        <h:form id="login">
-            <p:inputText widgetVar="#{loginView.username}"/> <br/>
-            <p:password widgetVar="#{loginView.password}"/> <br/>
-            <p:button value="Login" icon="ui-icon-user">
-                <p:ajax listener="#{loginView.doLogin}"
-                        event="click"/>
-            </p:button>
-        </h:form>
-    </p:outputPanel>
+<h:body style="background-color: #2334AA;">
+
+        <p:panelGrid style="margin: auto;" columns="1">
+            <p:panel style="text-align: center; ">
+                <p:outputLabel value="Estat" style="text-align: center"/> <br/>
+                <p:graphicImage value="/images/logo.png" style="text-align: center; width: 200px;"/> <br/>
+                <h:form id="login">
+                    <p:outputLabel>Username</p:outputLabel><br/>
+                    <p:inputText widgetVar="#{loginView.username}"/> <br/>
+                    <p:outputLabel>Password</p:outputLabel><br/>
+                    <p:password widgetVar="#{loginView.password}"/> <br/>
+                    <br/>
+                    <p:button value="Login" icon="ui-icon-person">
+                        <p:ajax listener="#{loginView.doLogin}"
+                                event="click"/>
+                    </p:button>
+                </h:form>
+            </p:panel>
+        </p:panelGrid>
+
 </h:body>
 </html>
