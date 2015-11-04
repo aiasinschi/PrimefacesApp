@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:p="http://primefaces.org/ui"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Primefaces test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</h:head>
+
+<h:body>
+    <p:outputPanel layout="center">
+        <p:graphicImage value="/images/logo.png"/> <br/>
+        <h:outputText value="Estat" /> <br/>
+        <h:form id="login">
+            <p:inputText widgetVar="#{loginView.username}"/> <br/>
+            <p:password widgetVar="#{loginView.password}"/> <br/>
+            <p:button value="Login" icon="ui-icon-user">
+                <p:ajax listener="#{loginView.doLogin}"
+                        event="click"/>
+            </p:button>
+        </h:form>
+    </p:outputPanel>
+</h:body>
+</html>
